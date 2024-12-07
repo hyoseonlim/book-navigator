@@ -5,9 +5,9 @@ import Home from "./components/Home";
 const Container = styled.div`
   display: flex;
   flex-direction: column;
+
   align-items: center;
   justify-content: space-between;
-  height: 60%;
   padding: 15px 10px 25px 10px;
   box-sizing: border-box;
 

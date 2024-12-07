@@ -7,14 +7,51 @@ import {
   CarouselWrapper,
   NavigationButton,
 } from "./CarouselStyle";
+import Img from "./Img";
+import { Dropdown, DropdownItem, SearchContainer } from "./SearchStyle";
 import Title from "./Title";
 
 function Home() {
   const [active, setActive] = useState(0);
-  const [count, setCount] = useState<number>(4);
+  const [count, setCount] = useState<number>(books.length);
+  const [searchTerm, setSearchTerm] = useState("");
+  const [showDropdown, setShowDropdown] = useState(false);
+
+  // 필터링된 책 데이터
+  const filteredBooks = books.filter((book) =>
+    book.title.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
+  const handleSelectBook = (index: number) => {
+    setActive(index); // 선택한 책으로 캐러셀 이동
+    setSearchTerm(books[index].title); // 검색창에 선택한 책 제목 표시
+    setShowDropdown(false); // 드롭다운 닫기
+  };
+
   return (
     <>
-      <Title>책 찾기</Title>
+      <Title>책 검색</Title>
+      <SearchContainer>
+        <input
+          type="text"
+          placeholder="책 제목 검색"
+          value={searchTerm}
+          onClick={() => setShowDropdown(true)} // 클릭 시 드롭다운 표시
+          onChange={(e) => setSearchTerm(e.target.value)} // 검색어 업데이트
+        />
+        {showDropdown && (
+          <Dropdown>
+            {filteredBooks.map((book, index) => (
+              <DropdownItem
+                key={book.id}
+                onClick={() => handleSelectBook(index)} // 책 선택 처리
+              >
+                {book.title}
+              </DropdownItem>
+            ))}
+          </Dropdown>
+        )}
+      </SearchContainer>
 
       <CarouselWrapper>
         {active > 0 && (
@@ -42,20 +79,11 @@ function Home() {
                   display: "flex",
                 }}
               >
-                <div
-                  style={{
-                    width: "12rem",
-                    height: "12rem",
-                    backgroundImage: `url(${book?.image})`,
-                    backgroundSize: "cover",
-                    backgroundPosition: "center",
-                    display: "flex", // Flexbox 적용
-                    alignItems: "center", // 수직 가운데 정렬
-                    justifyContent: "center", // 수평 가운데 정렬
-                    textAlign: "center",
-                    color: "black",
-                  }}
-                ></div>
+                <Img
+                  width={"80%"}
+                  src={require(`../images/${book.image}.jpg`)}
+                  alt={book.title}
+                />
               </div>
             </CardStyled>
           </CardContainer>

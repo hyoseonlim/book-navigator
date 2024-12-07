@@ -74,12 +74,12 @@ export const CardStyled = styled.div<{ absOffset: number }>`
   padding: 2rem;
   display: inline-block;
   background-color: hsl(
-    340deg,
+    40deg,
     60%,
     calc(100% - ${(props) => props.absOffset * 20}%)
   );
   border-radius: 1rem;
-  border: 4px solid lavender;
+  border: 4px solid #1d2f38;
   color: ${COLORS.gray};
   text-align: center;
   transition: all 0.3s ease-out;

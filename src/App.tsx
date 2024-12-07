@@ -13,7 +13,8 @@ const AppContainer = styled.div`
   justify-content: center; /* 세로 가운데 정렬 */
   width: 100vw; /* 화면 너비 전체 */
   height: 100vh; /* 화면 높이 전체 */
-  text-align: center; /* 텍스트 콘텐츠 가운데 정렬 */
+  text-align: center;
+  background-color: #dbe0da;
 `;
 
 // 메인 콘텐츠 영역 스타일
