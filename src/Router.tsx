@@ -1,6 +1,8 @@
 import { Route, Switch } from "react-router-dom";
 import styled from "styled-components";
+import BookDetail from "./components/BookDetail";
 import Home from "./components/Home";
+import Search from "./components/Search";
 
 const Container = styled.div`
   display: flex;
@@ -25,9 +27,9 @@ function Router() {
     <>
       <Container>
         <Switch>
-          <Route path="/" exact>
-            <Home />
-          </Route>
+          <Route path="/" exact component={Home} />
+          <Route path="/search" exact component={Search} />
+          <Route path="/book/:id" component={BookDetail} />
         </Switch>
       </Container>
     </>

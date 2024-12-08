@@ -5,7 +5,7 @@ import App from "./App";
 // 폰트
 const fontLink = document.createElement("link");
 fontLink.href =
-  "https://fonts.googleapis.com/css2?family=Jua&family=Nanum+Pen+Script&display=swap";
+  "https://fonts.googleapis.com/css2?family=Jua&family=Noto+Sans+Korean&family=Nanum+Pen+Script&family=Gowon+Dodum&family=Hi+Melody&family=Poor+Story&display=swap";
 fontLink.rel = "stylesheet";
 document.head.appendChild(fontLink);
 

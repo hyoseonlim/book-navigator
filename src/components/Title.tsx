@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 const Title = styled.h2`
-  font-family: Jua;
   font-size: 1.5rem;
   font-weight: bold;
   text-align: center;

@@ -58,7 +58,7 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
   }
   body {
-    font-family: 'Gothic A1', sans-serif;
+    font-family: Poor Story;
     background-color:white;
     color:black;
 

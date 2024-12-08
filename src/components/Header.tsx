@@ -9,11 +9,11 @@ const HeaderContainer = styled.div`
   align-items: center; /* 수직 중앙 정렬 */
   background-color: #e0d6c6;
   box-sizing: border-box;
+  border-bottom: 4px solid #1d2f38;
 `;
 
 const LogoImg = styled.img`
   width: 90vw;
-  border: 1px solid black;
 `;
 
 const Header = () => {

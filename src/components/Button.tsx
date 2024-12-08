@@ -8,13 +8,9 @@ const variantStyles: Record<
   string,
   { backgroundColor: string; color?: string }
 > = {
-  hotpink: { backgroundColor: "#ed798d" },
-  blue: { backgroundColor: "#87b9ce" },
-  pink: { backgroundColor: "#eeb0b2" },
+  beige: { backgroundColor: "#F5EEDC" },
   gray: { backgroundColor: "#bccbd2" },
-  white: { color: "#333", backgroundColor: "#ffffff" },
   black: { backgroundColor: "#3a3b42" },
-  whitehotpink: { color: "#ed798d", backgroundColor: "#ffffff" },
 };
 
 const defaultStyle = {
@@ -24,16 +20,15 @@ const defaultStyle = {
 };
 
 export const Button = styled.button<ButtonProps>`
-  border: none;
+  border: 3px groove #5a8a97;
   cursor: pointer;
   border-radius: 5px;
   padding: 8px;
-  width: 100%;
-  height: 2rem;
+  width: 90%;
+  height: 2.5rem;
   margin: 2px 0;
+  font-family: Poor Story;
 
-  color: ${({ category }) =>
-    variantStyles[category]?.color || defaultStyle.color};
   background-color: ${({ category }) =>
     variantStyles[category]?.backgroundColor || defaultStyle.backgroundColor};
 

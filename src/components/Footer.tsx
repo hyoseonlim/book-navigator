@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import reference from "../images/reference.jpg";
+import Img from "./Img";
 
 const FooterContainer = styled.footer`
   width: 100vw;
@@ -6,11 +8,13 @@ const FooterContainer = styled.footer`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  font-size: 1rem;
-  font-family: Nanum Pen Script;
-  color: black;
+  align-items: center;
+  font-size: 0.6rem;
+  color: #1d2f38;
   text-align: center;
   background-color: #e0d6c6;
+  border-top: 4px solid #1d2f38;
+  line-height: 1.5;
 
   @media (min-width: 768px) {
     font-size: 17px;
@@ -22,12 +26,22 @@ const FooterContainer = styled.footer`
 `;
 
 function Footer() {
+  const handleClick = () => {
+    window.open("https://library.seoultech.ac.kr/#/", "_blank");
+  };
   return (
     <FooterContainer>
-      서울과학기술대학교 산업정보시스템전공 HCI 강의의
-      <br />팀 프로젝트 진행을 위한 테스트용 서비스입니다.
+      팀 프로젝트 진행을 위한 테스트용 서비스로,
       <br />
-      <br /> lovellehyo@gmail.com
+      서울과학기술대학교 도서관 서비스의 디자인을 참고했습니다.
+      <br />
+      <br />
+      <Img
+        width={"40%"}
+        src={reference}
+        onClick={handleClick}
+        style={{ opacity: "0.9" }}
+      />
     </FooterContainer>
   );
 }

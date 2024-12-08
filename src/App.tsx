@@ -9,12 +9,13 @@ import Header from "./components/Header";
 const AppContainer = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center; /* 가로 가운데 정렬 */
-  justify-content: center; /* 세로 가운데 정렬 */
-  width: 100vw; /* 화면 너비 전체 */
-  height: 100vh; /* 화면 높이 전체 */
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: calc(100vh - env(safe-area-inset-bottom)); /* 실제 높이를 계산 */
   text-align: center;
   background-color: #dbe0da;
+  overflow: hidden; /* 오버플로우 방지 */
 `;
 
 // 메인 콘텐츠 영역 스타일
@@ -24,6 +25,7 @@ const Content = styled.main`
   align-items: center;
   justify-content: center;
   flex: 1;
+  overflow: hidden; /* 오버플로우 방지 */
 `;
 function App() {
   return (

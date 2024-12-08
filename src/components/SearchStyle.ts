@@ -2,9 +2,10 @@ import styled from "styled-components";
 
 // 검색창 컨테이너
 export const SearchContainer = styled.div`
-  width: 80%;
+  width: 90%;
   margin: 0px 10px 20px 10px;
   position: relative;
+  font-family: Poor Story;
 
   input {
     width: 100%;
